@@ -1,0 +1,129 @@
+/* ===== Page: bill machine ===== */
+.bm-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cfe3c8;            /* bg kammiya iruntha thonura side color */
+}
+
+/* Phone maari chinna frame (full width illa) */
+.bm-stage {
+  position: relative;
+  width: 470px;
+  height: 620px;
+  border-radius: 1rem;
+  overflow: hidden;               /* blur image frame ku veliya poga koodaadhu */
+}
+
+/* Blur aana background image (image src JSX la inline-ah varum) */
+.bm-bg {
+  position: absolute;
+  height: 550px;
+  inset: -20px;                   /* blur edge la white gap varaama irukka */
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px) brightness(0.7);
+}
+
+/* ===== Yellow machine (SVG) ===== */
+.bm-machine {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  z-index: 5;                     /* bill ku mela -> bill ulla irundhu varra maari */
+  display: block;
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.45));
+}
+
+/* ===== Bill wrapper (slot-la irundhu keezha clip aagum) ===== */
+.bm-slot {
+  position: absolute;
+  top: 70px;                      /* machine slot bottom position */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 292px;
+  height: 540px;
+  overflow: hidden;               /* slot ku mela bill theriyaadhu */
+  z-index: 2;
+}
+
+/* ===== Bill card ===== */
+.bm-bill {
+  background: #fff; 
+  padding: 26px 20px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.bm-icon {
+  width: 46px;
+  height: 46px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+  background: #fff3c4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+
+.bm-title {
+  margin: 4px 0 2px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.bm-sub {
+  margin: 0;
+  font-size: 11px;
+  color: #8a8a8a;
+}
+
+.bm-line {
+  border: none;
+  border-top: 1px dashed #bbb;
+  margin: 16px 0;
+}
+
+.bm-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 11px;
+}
+
+.bm-label { color: #8a8a8a; }
+.bm-value { font-weight: 600; font-size: 13px; color: #111; }
+.bm-amount { font-weight: 800; font-size: 18px; }
+
+.bm-status {
+  background: #d8f5e8;
+  color: #1a8f5c;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.bm-user {
+  margin: 0;
+  font-size: 13px;
+  text-align: left;
+}
+
+.bm-barcode {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+}
+
+.bm-bar {
+  height: 34px;
+  background: #000;
+}
